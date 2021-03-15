@@ -18,6 +18,6 @@ class Task3Test {
   }
 
   @Test def testFib() {
-    assertEquals(Cons(0, Cons(1, Cons(1, Cons(2, Cons(3, Cons(5, Cons(8, Cons(13, Nil())))))))), take(fib())(5))
+    assertEquals(Cons(0, Cons(1, Cons(1, Cons(2, Cons(3, Cons(5, Cons(8, Cons(13, Nil())))))))), toList(take(fib())(8)))
   }
 }

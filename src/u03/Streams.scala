@@ -2,6 +2,7 @@ package u03
 
 import u03.Streams.Stream
 
+
 object Streams {
   import Lists._
   sealed trait Stream[A]
@@ -50,8 +51,10 @@ object Streams {
     def constant[A](value: A): Stream[A] = cons(value, constant(value)) // pass value by value so constant really is a constant
   }
 
+  import Stream.cons
   def fib(): Stream[Int] = {
-
+      def fib2(a: Int, b: Int): Stream[Int] = cons(b, fib2(b, a+b))
+      cons(0, fib2(0, 1))
   }
 }
 
