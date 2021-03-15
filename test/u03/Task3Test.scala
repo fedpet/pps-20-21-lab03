@@ -2,9 +2,7 @@ package u03
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
-import u03.Lists.List
-import u03.Lists.List._
-import u03.Streams.Stream
+import u03.Lists.List.{Cons, Nil}
 import u03.Streams.Stream._
 
 class Task3Test {
