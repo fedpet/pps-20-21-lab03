@@ -23,4 +23,9 @@ class Task1Test {
     assertEquals(Cons(11, Cons(21, Cons(31, Nil()))), map(lst)(_+1))
     assertEquals(Cons("10", Cons("20", Cons("30", Nil()))), map(lst)(_.toString))
   }
+
+  @Test def testFilter() {
+    assertEquals(Cons(10, Cons(20, Nil())), filter(lst)(_<30))
+    assertEquals(Nil(), filter(lst)(_>1000))
+  }
 }
