@@ -3,6 +3,7 @@ package u03
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import u03.Lists.List._
+import u02.Optionals.Option._
 
 class Task1Test {
   private val lst = Cons(10, Cons(20, Cons(30, Nil())))
@@ -27,5 +28,10 @@ class Task1Test {
   @Test def testFilter() {
     assertEquals(Cons(10, Cons(20, Nil())), filter(lst)(_<30))
     assertEquals(Nil(), filter(lst)(_>1000))
+  }
+
+  @Test def testMax() {
+    assertEquals(Some(25), max(Cons(10, Cons(25, Cons(20, Nil())))))
+    assertEquals(None(), max(Nil()))
   }
 }
