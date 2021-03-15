@@ -1,5 +1,8 @@
 package u03
 
+import u02.Optionals.Option.{None, Some, getOrElse}
+import u02.Optionals.Option
+
 object Lists {
 
   // A generic linkedlist
@@ -36,6 +39,12 @@ object Lists {
     def flatMap[A,B](l: List[A])(f: A => List[B]): List[B] = l match {
       case Cons(h, t) => append(f(h), flatMap(t)(f))
       case Nil() => Nil()
+    }
+
+    def max(l: List[Int]): Option[Int] = l match {
+      case Cons(h, t) if h >= getOrElse(max(t), h) => Some(h)
+      case Cons(_, t) => max(t)
+      case _ => None()
     }
   }
 }
