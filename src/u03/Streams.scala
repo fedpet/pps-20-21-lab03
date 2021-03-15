@@ -45,7 +45,7 @@ object Streams {
       case _ => Empty()
     }
 
-    def constant[A](value: A): Stream[A] = cons(value, constant(value)) // pass value by value so constant really is a constant
+    def constant[A](value: A): Stream[A] = cons(value, constant(value))
   }
 
   import Stream.cons
