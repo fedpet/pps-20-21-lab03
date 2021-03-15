@@ -1,8 +1,5 @@
 package u03
 
-import u03.Streams.Stream
-
-
 object Streams {
   import Lists._
   sealed trait Stream[A]
