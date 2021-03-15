@@ -46,6 +46,8 @@ object Streams {
       case Cons(h, t) if n <= 0 => cons(h(), drop(t())(n))
       case _ => Empty()
     }
+
+    def constant[A](value: => A): Stream[A] = ???
   }
 }
 
