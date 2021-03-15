@@ -47,9 +47,15 @@ object Lists {
       case _ => None()
     }
 
-    def foldLeft[A](l: List[A])(base: A)(op: (A,A) => A): List[A] = ???
+    def foldLeft[A](l: List[A])(base: A)(op: (A,A) => A): A = l match {
+      case Cons(h, t) => op(foldLeft(t)(base)(op), h)
+      case Nil() => base
+    }
 
-    def foldRight[A](l: List[A])(base: A)(op: (A,A) => A): List[A] = ???
+    def foldRight[A](l: List[A])(base: A)(op: (A,A) => A): A = l match {
+      case Cons(h, t) => op(h, foldRight(t)(base)(op))
+      case Nil() => base
+    }
   }
 }
 
