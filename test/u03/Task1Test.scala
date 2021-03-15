@@ -3,7 +3,8 @@ package u03
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import u03.Lists.List._
-import u02.Optionals.Option._
+import u02.Optionals.Option.Some
+import u02.Optionals.Option.None
 
 class Task1Test {
   private val lst = Cons(10, Cons(20, Cons(30, Nil())))
