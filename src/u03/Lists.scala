@@ -22,11 +22,10 @@ object Lists {
 
     def map[A,B](l: List[A])(mapper: A=>B): List[B] = flatMap(l)(e => Cons(mapper(e), Nil()))
 
-    def filter[A](l1: List[A])(pred: A=>Boolean): List[A] = l1 match {
-      case Cons(h,t) if (pred(h)) => Cons(h, filter(t)(pred))
-      case Cons(_,t) => filter(t)(pred)
-      case Nil() => Nil()
-    }
+    def filter[A](l1: List[A])(pred: A=>Boolean): List[A] = flatMap(l1)({
+      case e if pred(e) => Cons(e, Nil())
+      case _ => Nil()
+    })
 
     def drop[A](l: List[A], n: Int): List[A] = l match {
       case Cons(_, t) if n > 0 => drop(t, n-1)
