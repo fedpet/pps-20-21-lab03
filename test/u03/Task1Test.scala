@@ -33,6 +33,8 @@ class Task1Test {
 
   @Test def testMax() {
     assertEquals(Some(25), max(Cons(10, Cons(25, Cons(20, Nil())))))
+    assertEquals(Some(25), max(Cons(10, Cons(25, Nil()))))
+    assertEquals(Some(25), max(Cons(25, Cons(1, Cons(24, Nil())))))
     assertEquals(None(), max(Nil()))
   }
 }

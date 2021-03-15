@@ -58,13 +58,3 @@ object Lists {
     }
   }
 }
-
-object ListsMain extends App {
-  import Lists._
-  val l = List.Cons(10, List.Cons(20, List.Cons(30, List.Nil())))
-  println(List.sum(l)) // 60
-  import List._
-  import u03.Lists.List
-  println(append(Cons(5, Nil()), l)) // 5,10,20,30
-  println(filter[Int](l)(_ >=20)) // 20,30
-}

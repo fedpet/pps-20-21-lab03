@@ -7,9 +7,8 @@ import u03.Streams.Stream._
 import u03.Streams.fib
 
 class Task3Test {
-  private val s = take(iterate(0)(_ +1))(10)
-
   @Test def testDrop() {
+    val s = take(iterate(0)(_ +1))(10)
     assertEquals(Cons(6, Cons(7, Cons(8, Cons(9, Nil())))), toList(drop(s)(6)))
   }
 
