@@ -49,6 +49,10 @@ object Streams {
 
     def constant[A](value: A): Stream[A] = cons(value, constant(value)) // pass value by value so constant really is a constant
   }
+
+  def fib(): Stream[Int] = {
+
+  }
 }
 
 object StreamsMain extends App {

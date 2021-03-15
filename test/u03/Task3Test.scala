@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import u03.Lists.List.{Cons, Nil}
 import u03.Streams.Stream._
+import u03.Streams.fib
 
 class Task3Test {
   private val s = take(iterate(0)(_ +1))(10)
@@ -16,5 +17,7 @@ class Task3Test {
     assertEquals(Cons("x", Cons("x", Cons("x", Cons("x", Cons("x", Nil()))))), toList(take(constant("x"))(5)))
   }
 
-
+  @Test def testFib() {
+    assertEquals(Cons(0, Cons(1, Cons(1, Cons(2, Cons(3, Cons(5, Cons(8, Cons(13, Nil())))))))), take(fib())(5))
+  }
 }
