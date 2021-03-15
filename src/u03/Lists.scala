@@ -20,10 +20,7 @@ object Lists {
       case _ => l2
     }
 
-    def map[A,B](l: List[A])(mapper: A=>B): List[B] = l match {
-      case Cons(h, t) => Cons(mapper(h), map(t)(mapper))
-      case Nil() => Nil()
-    }
+    def map[A,B](l: List[A])(mapper: A=>B): List[B] = flatMap(l)(e => Cons(mapper(e), Nil()))
 
     def filter[A](l1: List[A])(pred: A=>Boolean): List[A] = l1 match {
       case Cons(h,t) if (pred(h)) => Cons(h, filter(t)(pred))
