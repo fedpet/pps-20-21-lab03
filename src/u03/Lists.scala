@@ -46,6 +46,10 @@ object Lists {
       case Cons(_, t) => max(t)
       case _ => None()
     }
+
+    def foldLeft[A](l: List[A])(base: A)(op: (A,A) => A): List[A] = ???
+
+    def foldRight[A](l: List[A])(base: A)(op: (A,A) => A): List[A] = ???
   }
 }
 
