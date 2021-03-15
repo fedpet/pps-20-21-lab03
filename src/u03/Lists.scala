@@ -36,6 +36,11 @@ object Lists {
       case Cons(h, t) if n <= 0 => Cons(h, drop(t, n))
       case _ => Nil()
     }
+
+    def flatMap[A,B](l: List[A])(f: A => List[B]): List[B] = l match {
+      case Cons(h, t) => append(f(h), flatMap(t)(f))
+      case Nil() => Nil()
+    }
   }
 }
 
