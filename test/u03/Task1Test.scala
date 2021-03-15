@@ -21,6 +21,6 @@ class Task1Test {
 
   @Test def testMap() {
     assertEquals(Cons(11, Cons(21, Cons(31, Nil()))), map(lst)(_+1))
-    assertEquals(Cons("10", Cons("20", Cons("30", Nil()))), map(lst)(toString))
+    assertEquals(Cons("10", Cons("20", Cons("30", Nil()))), map(lst)(_.toString))
   }
 }
